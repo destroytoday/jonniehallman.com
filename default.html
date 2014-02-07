@@ -1,4 +1,11 @@
 {% capture content %}
+  {% assign photo = assets.first %}
+  <article class='photo-article'>
+    <figure class='photo' style='background-image: url({{ photo.url }}); padding-bottom: {{ photo.meta.ratio | fallback: "67%" }}'></figure>
+    <h2 class='photo-title'>
+      <a href='{{ url }}'>{{ title }}</a>
+    </h2>
+  </article>
 {% endcapture %}
 
 {% include 'layouts/default' %}
