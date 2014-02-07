@@ -1,0 +1,69 @@
+@import '_normalize'
+
+// variables
+
+$base-font: Courier, monospace
+
+// reset
+
+@media screen and (max-device-width: 480px)
+  html
+    -webkit-text-size-adjust: 100%
+    -ms-text-size-adjust: 100%
+
+*
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+
+ul
+  padding: 0
+
+li
+  list-style-type: none
+
+// base
+
+body
+  overflow-x: hidden
+  font: 400 100%/1.65 $base-font
+  text-rendering: optimizeLegibility
+
+img
+  max-width: 100%
+
+a
+  text-decoration: none
+  color: #000
+
+  &:hover
+    color: #999
+
+  img
+    vertical-align: top
+
+// header
+
+.main-header
+  margin: 2em 0
+  text-align: center
+
+  & + .photo-article
+    margin-top: 0
+
+.logo
+  line-height: 1em
+
+// photo
+
+.photo-article
+  margin: 4em 0
+
+.photo
+  background-repeat: no-repeat
+  background-size: contain
+
+.photo-title
+  font-size: 0.875em
+  font-weight: normal
+  text-align: center
