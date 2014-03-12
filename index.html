@@ -1,5 +1,5 @@
 {% capture content %}
-{% for post in posts %}
+{% for post in posts limit: 20 %}
   {% assign photo = post.assets.first %}
   <article class='photo-article'>
     <figure class='photo' style='background-image: url({{ photo.url }}); padding-bottom: {{ photo.meta.ratio | fallback: "67%" }}'></figure>
