@@ -1,12 +1,6 @@
 {% capture content %}
 {% for post in posts limit: 10 %}
-  {% assign photo = post.assets.first %}
-  <article class='photo-article'>
-    <figure class='photo' style='background-image: url({{ photo.url }}); padding-bottom: {{ photo.meta.ratio | fallback: "67%" }}'></figure>
-    <h2 class='photo-title'>
-      <a href='{{ post.url }}'>{{ post.title }}</a>
-    </h2>
-  </article>
+  {% include 'includes/photo' %}
 {% endfor %}
 
 <nav class='main-nav'>
