@@ -1,0 +1,17 @@
+{% capture content %}
+<div class='wrapper'>
+{% for post in site.pages.photos.posts %}
+  {% assign year = post.date | date: '%Y' %}
+  {% if year == '2014' %}
+    {% assign photo = post.assets.first %}
+    <article class='photo-thumb'>
+      <a href='{{ post.url }}'>
+        <figure class='photo' style='background-image: url({{ photo.url | replace: ".jpg", "_thumb.jpg" }})'></figure>
+      </a>
+    </article>
+  {% endif %}
+{% endfor %}
+</div>
+{% endcapture %}
+
+{% include 'layouts/default' %}

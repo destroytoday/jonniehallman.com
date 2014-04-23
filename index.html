@@ -1,5 +1,5 @@
 {% capture content %}
-{% for post in posts limit: 20 %}
+{% for post in posts limit: 10 %}
   {% assign photo = post.assets.first %}
   <article class='photo-article'>
     <figure class='photo' style='background-image: url({{ photo.url }}); padding-bottom: {{ photo.meta.ratio | fallback: "67%" }}'></figure>
@@ -8,6 +8,11 @@
     </h2>
   </article>
 {% endfor %}
+
+<nav class='main-nav'>
+  <h2 class='subtitle'>Archive</h2>
+  <a href='/2014'>2014</a>
+</nav>
 {% endcapture %}
 
 {% include 'layouts/default' %}
